@@ -492,9 +492,9 @@ portfolio section
     	justify-content: center;
 }
 .swiper-slide img {
-   	max-width: 100%; /* 图片不超过幻灯片宽度 */
-    	max-height: 100%; /* 图片不超过幻灯片高度 */
-    	object-fit: contain; /* 保持图片比例 */
+   	max-width: 100% !important; /* 图片不超过幻灯片宽度 */
+    	max-height: 100% !important; /* 图片不超过幻灯片高度 */
+    	object-fit: contain !important; /* 保持图片比例 */
 }
 
 /* ==========================================================================
