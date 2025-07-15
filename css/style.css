@@ -491,6 +491,7 @@ portfolio section
     	align-items: center;
     	justify-content: center;
 	transition: transform 0.3s ease; /* 添加过渡效果 */
+	cursor: pointer; 
 }
 .swiper-slide img {
    	max-width: 100% !important; /* 图片不超过幻灯片宽度 */
