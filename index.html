@@ -20,6 +20,7 @@
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
+
 <!-- preloader section -->
 <div class="preloader">
 	<div class="sk-spinner sk-spinner-circle">
@@ -383,6 +384,17 @@
     						<div class="swiper-slide"><img src="images/portfolio-img4.jpg" alt="Image 4"></div>
   					</div>
 				</div>
+				<script>
+    					const swiper = new Swiper('.swiper-container', {
+  						slidesPerView: 'auto', // 自动计算显示几张图片
+ 						spaceBetween: 10, // 图片间距
+ 	 					loop: true, // 无限循环
+  						autoplay: {
+    							delay: 2000, // 2秒切换一次
+    							disableOnInteraction: false, // 用户操作后仍自动播放
+  						},
+					});
+  				</script>
 				<!-- ISO section 
 				<div class="iso-section">
 					<ul class="filter-wrapper clearfix">
