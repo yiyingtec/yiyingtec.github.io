@@ -496,16 +496,9 @@ portfolio section
    	max-width: 100% !important; /* 图片不超过幻灯片宽度 */
     	max-height: 100% !important; /* 图片不超过幻灯片高度 */
     	object-fit: contain !important; /* 保持图片比例 */
-	transition: transform 0.3s ease; /* 图片过渡效果 */
-  	transform-origin: center center; /* 确保从中心放大 */
 }
-/* 悬停时放大整个幻灯片和图片 */
-.swiper:hover .swiper-slide-active {
-  transform: scale(1.02);
-}
-
-.swiper:hover .swiper-slide-active img {
-  transform: scale(1.05);
+.swiper-slide:hover img {
+  transform: scale(1.05); /* 悬停时放大效果 */
 }
 
 /* ==========================================================================
