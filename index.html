@@ -401,6 +401,15 @@
     							disableOnInteraction: false, // 用户操作后仍自动播放
     						},
   					});
+					// 鼠标悬停时暂停
+					document.querySelector('.swiper-container').addEventListener('mouseenter', function() {
+  						swiper.autoplay.stop();
+					});
+
+					// 鼠标离开时继续
+					document.querySelector('.swiper-container').addEventListener('mouseleave', function() {
+  						swiper.autoplay.start();
+					});
 				</script>
 			</div>
 		</div>
