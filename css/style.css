@@ -480,10 +480,7 @@ portfolio section
 #portfolio img:hover {
 	opacity: 0.5;
 }
-.swiper {
-  width: 600px;
-  height: 300px;
-}
+
 /* FILTER CSS */
 .filter-wrapper {
 	width: 100%;
