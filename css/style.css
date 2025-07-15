@@ -481,8 +481,10 @@ portfolio section
 	opacity: 0.5;
 }
 .swiper {
-  width: 600px;
-  height: 300px;
+  height: 300px; /* 必须设置高度（垂直轮播时尤其重要） */
+}
+.swiper-slide {
+  height: 100%; /* 确保幻灯片填满容器 */
 }
 /* FILTER CSS */
 .filter-wrapper {
