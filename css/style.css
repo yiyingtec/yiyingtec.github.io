@@ -483,7 +483,6 @@ portfolio section
 .swiper {
 	width: 100%; /* 确保宽度占满父容器 */
 	height: 300px; /* 设置一个固定高度（可调整） */
-	overflow: hidden;
 }
 .swiper-slide {
 	width: auto; /* 幻灯片宽度自适应内容（或设置固定宽度） */
@@ -501,11 +500,11 @@ portfolio section
   	transform-origin: center center; /* 确保从中心放大 */
 }
 /* 悬停时放大整个幻灯片和图片 */
-.swiper-container:hover .swiper-slide-active {
+.swiper:hover .swiper-slide-active {
   transform: scale(1.02);
 }
 
-.swiper-container:hover .swiper-slide-active img {
+.swiper:hover .swiper-slide-active img {
   transform: scale(1.05);
 }
 
