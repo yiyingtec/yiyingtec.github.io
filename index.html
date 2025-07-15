@@ -8,8 +8,7 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	<link rel="icon" type="image/png" href="images/favicon.png">
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
@@ -20,6 +19,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
 
 <!-- preloader section -->
 <div class="preloader">
@@ -384,6 +384,17 @@
     						<div class="swiper-slide"><img src="images/portfolio-img4.jpg" alt="Image 4"></div>
   					</div>
 				</div>
+				<script>
+    					const swiper = new Swiper('.swiper-container', {
+  						slidesPerView: 'auto', // 自动计算显示几张图片
+ 						spaceBetween: 10, // 图片间距
+ 	 					loop: true, // 无限循环
+  						autoplay: {
+    							delay: 2000, // 2秒切换一次
+    							disableOnInteraction: false, // 用户操作后仍自动播放
+  						},
+					});
+  				</script>
 				<!-- ISO section 
 				<div class="iso-section">
 					<ul class="filter-wrapper clearfix">
@@ -564,6 +575,7 @@
 <script src="js/jquery.backstretch.min.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/swiper-bundle.min.js"></script>
 	
 </body>
 </html>
