@@ -403,33 +403,14 @@
     						},
   					});
 					
-					// 动态检测悬停的当前活动幻灯片
-					var swiperContainer = document.querySelector('.swiper');
-					let currentHoveredSlide = null;
-
-					swiperContainer.addEventListener('mouseover', function(e) {
-  						var slide = e.target.closest('.swiper-slide');
-  						if (slide && slide.classList.contains('swiper-slide-active')) {
-    							currentHoveredSlide = slide;
-    							slide.querySelector('img').style.transform = 'scale(1.05)';
-    							swiper.autoplay.stop();
-  						}
+					// 鼠标悬停时暂停
+					document.querySelector('.swiper').addEventListener('mouseenter', function() {
+  						swiper.autoplay.stop();
 					});
 
-					swiperContainer.addEventListener('mouseout', function(e) {
-  						if (currentHoveredSlide) {
-    							currentHoveredSlide.querySelector('img').style.transform = 'scale(1)';
-   	 						swiper.autoplay.start();
-    							currentHoveredSlide = null;
-  						}
-					});
-
-					// 幻灯片切换时重置
-					swiper.on('slideChange', function() {
- 	 					if (currentHoveredSlide) {
-    							currentHoveredSlide.querySelector('img').style.transform = 'scale(1)';
-    							currentHoveredSlide = null;
-  						}
+					// 鼠标离开时继续
+					document.querySelector('.swiper').addEventListener('mouseleave', function() {
+  						swiper.autoplay.start();
 					});
 				</script>
 			</div>
