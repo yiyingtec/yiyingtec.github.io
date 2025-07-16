@@ -402,14 +402,80 @@
     							disableOnInteraction: false, // 用户操作后仍自动播放
     						},
   					});
-					// 鼠标悬停时暂停
-					document.querySelector('.swiper').addEventListener('mouseenter', function() {
-  						swiper.autoplay.stop();
+					// 配置参数
+					var HOVER_SCALE = 1.02;      // 放大比例
+					var HOVER_DURATION = 2000;  // 放大持续时间(2秒)
+					var TRANSITION_SPEED = 300; // 放大/缩小动画速度(毫秒)
+
+					// 当前悬停状态
+					let isHovering = false;
+					let hoverTimer = null;
+
+					// 悬停处理函数
+					function handleHoverStart(slide) {
+  						if (isHovering) return;
+  
+  					isHovering = true;
+  
+  					// 暂停自动轮播
+  					swiper.autoplay.stop();
+  
+  					// 放大当前幻灯片
+  					const img = slide.querySelector('img');
+  					img.style.transition = `transform ${TRANSITION_SPEED}ms ease`;
+  					img.style.transform = `scale(${HOVER_SCALE})`;
+  
+  					// 2秒后恢复
+  					hoverTimer = setTimeout(() => {
+    						handleHoverEnd(slide);
+  						}, HOVER_DURATION);
+					}
+
+					function handleHoverEnd(slide) {
+  						if (!isHovering) return;
+  
+  							clearTimeout(hoverTimer);
+  							isHovering = false;
+  
+  							// 缩小图片
+  							const img = slide.querySelector('img');
+  							img.style.transform = 'scale(1)';
+  
+  							// 延迟后恢复自动轮播(等缩小动画完成)
+  							setTimeout(() => {
+    								swiper.autoplay.start();
+  							}, TRANSITION_SPEED);
+					}
+
+					// 绑定事件
+					document.querySelectorAll('.swiper-slide').forEach(slide => {
+  						slide.addEventListener('mouseenter', () => {
+    							if (slide.classList.contains('swiper-slide-active')) {
+      								handleHoverStart(slide);
+    							}
+  						});
+  
+  						slide.addEventListener('mouseleave', () => {
+    							if (slide.classList.contains('swiper-slide-active')) {
+      								handleHoverEnd(slide);
+    							}
+  						});
 					});
 
-					// 鼠标离开时继续
-					document.querySelector('.swiper').addEventListener('mouseleave', function() {
-  						swiper.autoplay.start();
+					// 幻灯片切换时重置状态
+					swiper.on('slideChange', function() {
+  						if (isHovering) {
+    							clearTimeout(hoverTimer);
+    							isHovering = false;
+    
+    							// 重置所有图片大小
+    							document.querySelectorAll('.swiper-slide img').forEach(img => {
+      								img.style.transform = 'scale(1)';
+    							});
+    
+    							// 确保轮播恢复
+    							swiper.autoplay.start();
+  						}
 					});
 				</script>
 			</div>
