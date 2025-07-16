@@ -402,14 +402,44 @@
     							disableOnInteraction: false, // 用户操作后仍自动播放
     						},
   					});
-					// 鼠标悬停时暂停
+					// 悬停状态变量
+					let hoverTimer = null;
+
+					// 鼠标悬停时暂停并放大
 					document.querySelector('.swiper').addEventListener('mouseenter', function() {
+  						var activeSlide = this.querySelector('.swiper-slide-active');
+  						var activeImg = activeSlide.querySelector('img');
+  
+  						// 暂停轮播
   						swiper.autoplay.stop();
+  
+  						// 放大图片
+  						activeImg.style.transition = 'transform 0.3s ease';
+  						activeImg.style.transform = 'scale(1.02)';
+  
+  						// 2秒后自动恢复
+  						hoverTimer = setTimeout(() => {
+    							activeImg.style.transform = 'scale(1)';
+    							swiper.autoplay.start();
+  						}, 2000);
 					});
 
-					// 鼠标离开时继续
+					// 鼠标离开时立即恢复
 					document.querySelector('.swiper').addEventListener('mouseleave', function() {
+  						// 清除计时器
+  						clearTimeout(hoverTimer);
+  
+  						// 立即恢复图片大小和轮播
+  						var activeImg = this.querySelector('.swiper-slide-active img');
+  						activeImg.style.transform = 'scale(1)';
   						swiper.autoplay.start();
+					});
+
+					// 幻灯片切换时重置图片大小
+					swiper.on('slideChange', function() {
+  						document.querySelectorAll('.swiper-slide img').forEach(img => {
+    							img.style.transform = 'scale(1)';
+  						});
 					});
 				</script>
 			</div>
