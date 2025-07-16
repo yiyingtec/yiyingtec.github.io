@@ -491,6 +491,8 @@ portfolio section
     	align-items: center;
     	justify-content: center;
 	transition: transform 0.3s ease; /* 添加过渡效果 */
+	-webkit-tap-highlight-color: transparent; /* 移除点击高亮 */
+  	touch-action: pan-y; /* 仅允许垂直滑动 */
 }
 .swiper-slide img {
    	max-width: 100% !important; /* 图片不超过幻灯片宽度 */
