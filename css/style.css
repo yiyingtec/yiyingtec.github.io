@@ -497,29 +497,10 @@ portfolio section
     	object-fit: contain !important; /* 保持图片比例 */
 	transition: transform 0.3s ease; /* 添加过渡效果 */
 }
-
-/* 悬停提示 */
-.swiper-slide::after {
-  content: '悬停查看 (2秒后自动继续)';
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: white;
-  background: rgba(0,0,0,0.5);
-  padding: 5px;
-  font-size: 12px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.swiper-slide:hover::after {
-  opacity: 1;
 	
-/*.swiper-slide:hover img {
+.swiper-slide:hover img {
   transform: scale(1.05); /* 悬停时放大效果 */
-*/
+
 
 /* ==========================================================================
 cooperation section
