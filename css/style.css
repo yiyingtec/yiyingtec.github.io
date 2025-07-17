@@ -480,7 +480,26 @@ portfolio section
 #portfolio img:hover {
 	opacity: 0.5;
 }
-
+.swiper {
+	width: 100%; /* 确保宽度占满父容器 */
+	height: 300px; /* 设置一个固定高度（可调整） */
+}
+.swiper-slide {
+	width: auto; /* 幻灯片宽度自适应内容（或设置固定宽度） */
+    	height: 300px; /* 高度填满容器 */
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+}
+.swiper-slide img {
+   	max-width: 100%; /* 图片不超过幻灯片宽度 */
+    	max-height: 100%; /* 图片不超过幻灯片高度 */
+    	object-fit: contain /* 保持图片比例 */
+	transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+	
+.swiper-slide:hover img {
+  transform: scale(1.05); /* 悬停时放大效果 */
 
 /* ==========================================================================
 cooperation section
