@@ -367,7 +367,56 @@
 </section>
 
 <!-- portfolio section -->
+<div id="portfolio">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<div class="section-title">
+					<strong>05</strong>
+					<h1 class="heading bold">溢盈印象</h1>
+					<hr>
+				</div>
+				<div class="swiper">
+  					<div class="swiper-wrapper">
+    						<div class="swiper-slide"><img src="images/portfolio-img1.jpg" alt="Image 1"></div>
+    						<div class="swiper-slide"><img src="images/portfolio-img2.jpg" alt="Image 2"></div>
+    						<div class="swiper-slide"><img src="images/portfolio-img3.jpg" alt="Image 3"></div>
+    						<div class="swiper-slide"><img src="images/portfolio-img4.jpg" alt="Image 4"></div>
+						<div class="swiper-slide"><img src="images/portfolio-img5.jpg" alt="Image 5"></div>
+						<div class="swiper-slide"><img src="images/portfolio-img6.jpg" alt="Image 6"></div>
+						<div class="swiper-slide"><img src="images/portfolio-img7.jpg" alt="Image 7"></div>
+						<div class="swiper-slide"><img src="images/portfolio-img8.jpg" alt="Image 8"></div>
+						<div class="swiper-slide"><img src="images/portfolio-img9.jpg" alt="Image 9"></div>
+  					</div>
+				</div>
+				
+				<script src="js/swiper-bundle.min.js"></script>
+				<script>
+  					// 初始化 Swiper
+ 			 		var swiper = new Swiper('.swiper', {
+    						slidesPerView: 'auto', // 自动计算显示几张图片
+ 						spaceBetween: 10, // 图片间距
+  						loop: true, // 无限循环
+  						autoplay: {
+    							delay: 2000, // 2秒切换一次
+    							disableOnInteraction: false, // 用户操作后仍自动播放
+    						},
+  					});
+					
+					// 鼠标悬停时暂停
+					document.querySelector('.swiper').addEventListener('mouseenter', function() {
+  						swiper.autoplay.stop();
+					});
 
+					// 鼠标离开时继续
+					document.querySelector('.swiper').addEventListener('mouseleave', function() {
+  						swiper.autoplay.start();
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+</div>
 	
 
 <!-- cooperation section -->
