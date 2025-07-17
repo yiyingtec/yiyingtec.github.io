@@ -475,7 +475,7 @@ portfolio section
 }
 .swiper {
 	width: 100%; /* 确保宽度占满父容器 */
-	height: 300px; /* 设置一个固定高度（可调整） */
+	min-height: 300px; /* 设置一个固定高度（可调整） */
 }
 .swiper-slide {
 	width: auto; /* 幻灯片宽度自适应内容（或设置固定宽度） */
