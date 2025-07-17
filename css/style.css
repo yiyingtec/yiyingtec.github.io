@@ -473,13 +473,6 @@ portfolio section
 	padding: 0;
 	margin: 0;
 }
-#portfolio img {
-	width: 100%;
-	transition: all 0.4s ease-in-out;
-}
-#portfolio img:hover {
-	opacity: 0.5;
-}
 .swiper {
 	width: 100%; /* 确保宽度占满父容器 */
 	height: 300px; /* 设置一个固定高度（可调整） */
