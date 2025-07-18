@@ -500,6 +500,7 @@ portfolio section
 	
 .swiper-slide:hover img {
   transform: scale(1.05); /* 悬停时放大效果 */
+}
 
 /* ==========================================================================
 cooperation section
